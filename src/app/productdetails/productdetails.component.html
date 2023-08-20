@@ -1,0 +1,8 @@
+<h3>Product Details</h3>
+<div *ngIf="selectedProduct">
+    <h3>{{selectedProduct.title}}</h3>
+    <p>{{selectedProduct.description}}</p>
+    <p>Price:{{selectedProduct.price | currency}}</p>
+    <button (click)="addToCart(selectedProduct)">Add to Cart</button>
+</div>
+<div *ngSwitchDefault>No product selected</div>

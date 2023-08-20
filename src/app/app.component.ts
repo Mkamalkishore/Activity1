@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { Router } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -9,26 +9,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  // showmovies=true;
-
-  constructor(private router:Router){
-    
-  }
-  title = 'task1';
-  isDisabled: Boolean=false;
-  //dynamicTXT:string='this is dynamic text ';
-
-  btnclick(){
-    console.log("I was clicked");
-  }
-
-  Loginclick(){
-    this.router.navigate(['login']);
-  }
-
-  Dashboardclick(){
-    this.router.navigate(['dashboard']);
-  }
-
+  title = 'DBandDirectives';
 }

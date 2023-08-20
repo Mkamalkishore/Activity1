@@ -1,24 +1,50 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MysrvcService } from './mysrvc.service';
+import { ProductlistComponent } from './productlist/productlist.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductService } from './product.service';
+import { CartService } from './cart.service';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+const routes: Routes = [
+{path: '', redirectTo: '/products', pathMatch: 'full'},
+{path: 'products', component: ProductlistComponent},
+{path: 'products/:id', component: ProductdetailsComponent},
+{path: 'cart', component: CartComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent
+    ProductlistComponent,
+    ProductdetailsComponent,
+    CartComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    RouterModule.forRoot(routes),
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [MysrvcService],
+  providers: [ProductService,CartService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}
