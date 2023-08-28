@@ -10,6 +10,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductlistComponent {
   products: Product[] = [];
+  selectedProductId: number| null=null;
 
   constructor(private productService: ProductService){
     this.products=productService.getProducts();
@@ -23,4 +24,17 @@ export class ProductlistComponent {
   ngOnInit(): void{
     this.products= this.productService.getProducts();
   }
+
+createProduct(newProduct: Product): void{
+  this.productService.addProduct(newProduct);
+}
+
+updateProduct(updateProduct: Product){
+  const index = this.products.findIndex(p=> p.title=== updateProduct.title);
+  if(index !== -1){
+    this.products[index]=updateProduct;
+    this.selectedProduct=null;
+    console.log('Updated product:', updateProduct);
+  }
+}
 }

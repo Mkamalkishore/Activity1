@@ -1,8 +1,25 @@
 <h3>Product Details</h3>
-<div *ngIf="selectedProduct">
+<div *ngIf="product">
+    <h4>{{ product.title}}</h4>
+    <p>{{product.description}}</p>
+    <p>Price:{{product.price | currency}}</p>
+</div>
+<!--<section *ngIf="product">
+<h4>{{product.title}}</h4>
+<p>{{product.description}}</p>
+<div [ngSwitch]="product.price">
+    <p *ngSwitchCase="100">Price: {{ product.price | currency }}</p>
+    <p *ngSwitchCase="150">On Sale: {{ product.price | currency }}</p>
+    <p *ngSwitchDefault>Price: {{ product.price | currency }}</p>
+
+</div>
+<button (click)="editProduct()">Edit</button>
+</section>
+
+<!--<div *ngIf="selectedProduct">
     <h3>{{selectedProduct.title}}</h3>
     <p>{{selectedProduct.description}}</p>
     <p>Price:{{selectedProduct.price | currency}}</p>
     <button (click)="addToCart(selectedProduct)">Add to Cart</button>
 </div>
-<div *ngSwitchDefault>No product selected</div>
+<div *ngSwitchDefault>No product selected</div>-->

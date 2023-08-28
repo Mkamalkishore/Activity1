@@ -6,8 +6,8 @@ import { Product } from './product.model';
 })
 export class ProductService {
    private products:Product[]=[
-    {id:1, title: 'mobile', description: 'Xiami mobiles (6+128gb)', price: 16000},
-    {id:2, title: 'laptop', description: 'Hp laptop 1TB', price: 64000},
+    {id:1, title: 'Mobiles', description: 'Xiami mobiles (6+128gb)', price: 16000},
+    {id:2, title: 'Laptops', description: 'Hp laptop 1TB', price: 64000},
 
    ];
 

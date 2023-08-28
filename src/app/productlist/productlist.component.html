@@ -3,8 +3,11 @@
 <h2>Product List</h2>
 <ul>
     <li *ngFor="let product of products; let i = index" (click)="showProductDetails(product)">
+      <h3>{{product.title}}</h3>
+      <p>{{product.title}} - {{product.price | currency}}</p>
+      <p>{{product.description}}</p>
       <a [routerLink]="['/products', product.id]">{{product.title}}</a>
-      {{product.title}} - {{product.price | currency}}
     </li>
   </ul>  
 </div>
+<app-productdetails *ngIf="selectedProduct" [product] = "selectedProduct" (updated)="updateProduct($event)"></app-productdetails>
